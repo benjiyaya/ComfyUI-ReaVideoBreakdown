@@ -34,11 +34,11 @@
         "Node name for S&R": "LoadVideo"
       },
       "widgets_values": [
-        "Beautiful Street Fashion Outfits Style.mp4",
+        "06231.mp4",
         "image"
       ],
       "widgets_values_named": {
-        "file": "Beautiful Street Fashion Outfits Style.mp4",
+        "file": "06231.mp4",
         "upload": "image"
       }
     },
@@ -295,9 +295,7 @@
         "cnr_id": "comfy-core",
         "ver": "0.45.0",
         "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": [],
-      "widgets_values_named": {}
+      }
     },
     {
       "id": 15,
@@ -582,10 +580,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.3310000000000006,
+      "scale": 0.6830134553650705,
       "offset": [
-        -658.1484751697263,
-        32.760539444688895
+        83.04036006693791,
+        234.58780315618418
       ]
     },
     "frontendVersion": "1.59.4",
