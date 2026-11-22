@@ -12,10 +12,8 @@ dependencies = ["numpy", "opencv-python-headless"]
 [project.urls]
 Repository = "https://github.com/benjiyaya/ComfyUI-ReaVideoBreakdown"
 
-# Fill PublisherId after registering at https://registry.comfy.org
-# (then `comfy publish` uploads this metadata).
 [tool.comfy]
-PublisherId = "YOUR-PUBLISHER-ID"
+PublisherId = "benjiyaya"
 DisplayName = "Rea Video Breakdown"
 Icon = ""
 Badge = ""
