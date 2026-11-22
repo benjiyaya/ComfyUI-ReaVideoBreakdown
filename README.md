@@ -39,8 +39,6 @@ ids    = clip.generate(tokens, max_length=..., temperature=...)
 text   = clip.decode(ids)
 ```
 
-- **No `clip_vision` tower** — no wasted VRAM.
-- **No JoyCaption, no external node, no API key.**
 - Frames are passed as a **video batch**, so the model sees motion, not just stills.
   (If your encoder doesn't support `videos=`, the node falls back to per-frame `images=` automatically.)
 
