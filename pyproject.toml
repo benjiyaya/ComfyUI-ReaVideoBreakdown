@@ -1,0 +1,21 @@
+# ComfyUI Registry packaging (https://registry.comfy.org).
+# The `name` must match the GitHub repo name (case-insensitive):
+#   ComfyUI-ReaVideoBreakdown  ->  comfyui-reavideobreakdown
+[project]
+name = "comfyui-reavideobreakdown"
+description = "Shot-by-shot video reverse engineering (rea-video style): detects shots, measures camera motion, and uses the native ComfyUI VLM text encoder to produce a VIDEO.md report + ready-to-use text-to-video prompts per shot. No clip_vision, no external API."
+version = "0.1.0"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["numpy", "opencv-python-headless"]
+
+[project.urls]
+Repository = "https://github.com/benjiyaya/ComfyUI-ReaVideoBreakdown"
+
+# Fill PublisherId after registering at https://registry.comfy.org
+# (then `comfy publish` uploads this metadata).
+[tool.comfy]
+PublisherId = "YOUR-PUBLISHER-ID"
+DisplayName = "Rea Video Breakdown"
+Icon = ""
+Badge = ""

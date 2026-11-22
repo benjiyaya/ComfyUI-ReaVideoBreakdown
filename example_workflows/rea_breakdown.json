@@ -1,0 +1,598 @@
+{
+  "id": "9a526def-4368-4df7-9ec5-15283471a18f",
+  "revision": 0,
+  "last_node_id": 19,
+  "last_link_id": 37,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "LoadVideo",
+      "pos": [
+        -69.67048844266523,
+        309.02066115702524
+      ],
+      "size": [
+        282.798828125,
+        576.7534722222223
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "Beautiful Street Fashion Outfits Style.mp4",
+        "image"
+      ],
+      "widgets_values_named": {
+        "file": "Beautiful Street Fashion Outfits Style.mp4",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 8,
+      "type": "GetVideoComponents",
+      "pos": [
+        260.6345703125003,
+        465.7793388429754
+      ],
+      "size": [
+        193.530859375,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            31
+          ]
+        },
+        {
+          "name": "bit_depth",
+          "type": "COMBO",
+          "links": null
+        },
+        {
+          "name": "color_space",
+          "type": "COMBO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "GetVideoComponents"
+      }
+    },
+    {
+      "id": 9,
+      "type": "CLIPLoader",
+      "pos": [
+        417.53921187077424,
+        258.20292952667234
+      ],
+      "size": [
+        378.59913940304614,
+        107.36602691073017
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3.5_9b_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 10,
+      "type": "ShowText|pysssss",
+      "pos": [
+        843.80265195497,
+        175.9003216372455
+      ],
+      "size": [
+        338.580076092112,
+        427.46016833331004
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "---\nformat: videomd-like\nsubformat: rea-video-comfyui-vlm\nreader: native ComfyUI VLM text encoder (clip.tokenize -> generate -> decode); no clip_vision\nduration: 7.00\nfps: 30.000\nsize: 720x1280\nshots: 6\n---\n\n## Verdict\n6 shots · live action 100%\n\n## Timeline\n| # | time | in | made | camera (measured) | description |\n|---|------|----|------|-------------------|-------------|\n| 00 | 00:00.00-00:01.23 | cut | live action | smooth camera move | A tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black … |\n| 01 | 00:01.23-00:02.40 | cut | live action | smooth camera move | A woman in a black sleeveless dress and high heels walks confidently down a city sidewalk,… |\n| 02 | 00:02.40-00:04.30 | cut | live action | smooth camera move | A woman with long brown hair in a high ponytail walks confidently down a city sidewalk. Sh… |\n| 03 | 00:04.30-00:04.80 | cut | live action | handheld camera | A woman in a black halter dress walks down a city street, her ponytail swinging slightly a… |\n| 04 | 00:04.80-00:05.63 | cut | live action | smooth camera move | A woman with long brown hair in a high ponytail, wearing large black sunglasses and a blac… |\n| 05 | 00:05.63-00:07.00 | cut | live action | smooth camera move | A woman in a black sleeveless dress and sunglasses walks confidently down a city street, c… |\n\n## Shot details & remake prompts\n### #00 00:00.00-00:01.23 · live action\nA tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses. She carries a black handbag in her left hand. Behind her, several people walk past near a white building with large windows and a black car parked on the street. The lighting is bright daylight.\n- shot size: medium · camera: smooth pan right following the subject's movement, with slight zoom out · motion: the woman walks forward steadily, arms swinging naturally; background pedestrians move in various directions · lighting: bright natural daylight with soft shadows under the overhangs · style: clean urban fashion photography aesthetic with neutral tones and sharp focus on the subject\n- measured camera~: smooth camera move (pan 275px/s, zoom -8.4%/s)\n- made_of evidence~: natural motion blur, realistic depth of field, and consistent lighting indicate real-world camera footage.\n- **video prompt:** a medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\n\n### #01 00:01.23-00:02.40 · live action\nA woman in a black sleeveless dress and high heels walks confidently down a city sidewalk, carrying a large black handbag. She wears sunglasses and has her hair tied back in a ponytail. The background includes storefronts, pedestrians, and urban street elements like poles and glass doors.\n- shot size: medium · camera: smooth pan right with slight zoom out, tracking the subject's movement · motion: The woman walks forward steadily from left to right across the frame; background figures move naturally but remain secondary. · lighting: Bright daylight with soft shadows, suggesting midday or early afternoon outdoor setting. · style: Clean, modern fashion editorial aesthetic with neutral tones and sharp focus on the subject.\n- measured camera~: smooth camera move (pan 346px/s, zoom -10.0%/s)\n- made_of evidence~: Realistic lighting, natural motion, and consistent depth of field indicate real-world camera footage.\n- **video prompt:** A woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\n\n### #02 00:02.40-00:04.30 · live action\nA woman with long brown hair in a high ponytail walks confidently down a city sidewalk. She wears a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag. The background features a modern storefront with white shelving displaying beige handbags. Other pedestrians are visible but out of focus as the camera follows her movement.\n- shot size: medium · camera: smooth pan right following the subject's walk, with slight zoom in · motion: the woman walks forward from left to right, maintaining a steady gait; her arms swing naturally, and she carries a bag in her left hand · lighting: bright daylight with soft shadows, suggesting an overcast or shaded urban environment · style: clean, high-fashion editorial aesthetic with neutral tones and sharp focus on the subject\n- measured camera~: smooth camera move (pan 575px/s, zoom +24.0%/s)\n- made_of evidence~: The footage shows natural lighting, realistic textures on clothing and skin, and consistent motion blur typical of real-world camera tracking.\n- **video prompt:** a medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\n\n### #03 00:04.30-00:04.80 · live action\nA woman in a black halter dress walks down a city street, her ponytail swinging slightly as she moves. The camera follows her from behind, capturing her confident stride and the urban environment around her. Pedestrians pass by in the background, adding to the bustling atmosphere of the scene.\n- shot size: medium · camera: handheld tracking shot following the subject from behind · motion: the woman walks forward confidently while carrying a black handbag · lighting: natural daylight illuminates the scene evenly · style: urban fashion photography style with a focus on elegance and movement\n- measured camera~: handheld camera (pan 115px/s, zoom +1.0%/s)\n- made_of evidence~: The video shows natural human movement and realistic lighting consistent with live-action footage.\n- **video prompt:** a medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\n\n### #04 00:04.80-00:05.63 · live action\nA woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, stands outdoors. She holds a black handbag on her right arm and wears a gold watch on her left wrist. Her head turns slightly to the side as she looks over her shoulder. The setting appears to be an urban street or plaza with neutral-toned buildings in the background.\n- shot size: medium · camera: smooth pan right with slight push in · motion: woman turns her head slightly to look over her shoulder while standing still otherwise · lighting: natural daylight with soft shadows · style: fashion photography aesthetic with clean lines and muted urban tones\n- measured camera~: smooth camera move (pan 100px/s, zoom -6.6%/s)\n- made_of evidence~: Natural lighting, realistic textures, and consistent motion indicate real-world camera footage of a person.\n- **video prompt:** a medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\n\n### #05 00:05.63-00:07.00 · live action\nA woman in a black sleeveless dress and sunglasses walks confidently down a city street, carrying a black handbag. She passes by a parked black car with a visible license plate and other pedestrians in the background. The setting is an urban environment with modern buildings featuring large glass windows and clean architectural lines.\n- shot size: medium · camera: smooth pan right following the subject's movement across the frame · motion: The woman walks forward steadily, her stride confident and purposeful. Other pedestrians move casually in the background, including a man in a blue cap walking past. · lighting: Natural daylight with soft shadows, indicating overcast or diffused sunlight. · style: Clean, contemporary fashion photography style with sharp focus on the subject and muted background tones.\n- measured camera~: smooth camera move (pan 469px/s, zoom -9.5%/s)\n- made_of evidence~: The footage shows natural lighting, realistic motion, and consistent depth of field typical of real-world camera capture.\n- **video prompt:** A medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look.\n\n_Generated by ComfyUI-ReaVideoBreakdown: shot detection + measured camera (OpenCV) and per-shot reading by the native ComfyUI VLM text encoder. `~` = tool-measured; descriptions/prompts come from the VLM seeing the actual frames._"
+      ],
+      "widgets_values_named": {
+        "text_0": "---\nformat: videomd-like\nsubformat: rea-video-comfyui-vlm\nreader: native ComfyUI VLM text encoder (clip.tokenize -> generate -> decode); no clip_vision\nduration: 7.00\nfps: 30.000\nsize: 720x1280\nshots: 6\n---\n\n## Verdict\n6 shots · live action 100%\n\n## Timeline\n| # | time | in | made | camera (measured) | description |\n|---|------|----|------|-------------------|-------------|\n| 00 | 00:00.00-00:01.23 | cut | live action | smooth camera move | A tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black … |\n| 01 | 00:01.23-00:02.40 | cut | live action | smooth camera move | A woman in a black sleeveless dress and high heels walks confidently down a city sidewalk,… |\n| 02 | 00:02.40-00:04.30 | cut | live action | smooth camera move | A woman with long brown hair in a high ponytail walks confidently down a city sidewalk. Sh… |\n| 03 | 00:04.30-00:04.80 | cut | live action | handheld camera | A woman in a black halter dress walks down a city street, her ponytail swinging slightly a… |\n| 04 | 00:04.80-00:05.63 | cut | live action | smooth camera move | A woman with long brown hair in a high ponytail, wearing large black sunglasses and a blac… |\n| 05 | 00:05.63-00:07.00 | cut | live action | smooth camera move | A woman in a black sleeveless dress and sunglasses walks confidently down a city street, c… |\n\n## Shot details & remake prompts\n### #00 00:00.00-00:01.23 · live action\nA tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses. She carries a black handbag in her left hand. Behind her, several people walk past near a white building with large windows and a black car parked on the street. The lighting is bright daylight.\n- shot size: medium · camera: smooth pan right following the subject's movement, with slight zoom out · motion: the woman walks forward steadily, arms swinging naturally; background pedestrians move in various directions · lighting: bright natural daylight with soft shadows under the overhangs · style: clean urban fashion photography aesthetic with neutral tones and sharp focus on the subject\n- measured camera~: smooth camera move (pan 275px/s, zoom -8.4%/s)\n- made_of evidence~: natural motion blur, realistic depth of field, and consistent lighting indicate real-world camera footage.\n- **video prompt:** a medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\n\n### #01 00:01.23-00:02.40 · live action\nA woman in a black sleeveless dress and high heels walks confidently down a city sidewalk, carrying a large black handbag. She wears sunglasses and has her hair tied back in a ponytail. The background includes storefronts, pedestrians, and urban street elements like poles and glass doors.\n- shot size: medium · camera: smooth pan right with slight zoom out, tracking the subject's movement · motion: The woman walks forward steadily from left to right across the frame; background figures move naturally but remain secondary. · lighting: Bright daylight with soft shadows, suggesting midday or early afternoon outdoor setting. · style: Clean, modern fashion editorial aesthetic with neutral tones and sharp focus on the subject.\n- measured camera~: smooth camera move (pan 346px/s, zoom -10.0%/s)\n- made_of evidence~: Realistic lighting, natural motion, and consistent depth of field indicate real-world camera footage.\n- **video prompt:** A woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\n\n### #02 00:02.40-00:04.30 · live action\nA woman with long brown hair in a high ponytail walks confidently down a city sidewalk. She wears a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag. The background features a modern storefront with white shelving displaying beige handbags. Other pedestrians are visible but out of focus as the camera follows her movement.\n- shot size: medium · camera: smooth pan right following the subject's walk, with slight zoom in · motion: the woman walks forward from left to right, maintaining a steady gait; her arms swing naturally, and she carries a bag in her left hand · lighting: bright daylight with soft shadows, suggesting an overcast or shaded urban environment · style: clean, high-fashion editorial aesthetic with neutral tones and sharp focus on the subject\n- measured camera~: smooth camera move (pan 575px/s, zoom +24.0%/s)\n- made_of evidence~: The footage shows natural lighting, realistic textures on clothing and skin, and consistent motion blur typical of real-world camera tracking.\n- **video prompt:** a medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\n\n### #03 00:04.30-00:04.80 · live action\nA woman in a black halter dress walks down a city street, her ponytail swinging slightly as she moves. The camera follows her from behind, capturing her confident stride and the urban environment around her. Pedestrians pass by in the background, adding to the bustling atmosphere of the scene.\n- shot size: medium · camera: handheld tracking shot following the subject from behind · motion: the woman walks forward confidently while carrying a black handbag · lighting: natural daylight illuminates the scene evenly · style: urban fashion photography style with a focus on elegance and movement\n- measured camera~: handheld camera (pan 115px/s, zoom +1.0%/s)\n- made_of evidence~: The video shows natural human movement and realistic lighting consistent with live-action footage.\n- **video prompt:** a medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\n\n### #04 00:04.80-00:05.63 · live action\nA woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, stands outdoors. She holds a black handbag on her right arm and wears a gold watch on her left wrist. Her head turns slightly to the side as she looks over her shoulder. The setting appears to be an urban street or plaza with neutral-toned buildings in the background.\n- shot size: medium · camera: smooth pan right with slight push in · motion: woman turns her head slightly to look over her shoulder while standing still otherwise · lighting: natural daylight with soft shadows · style: fashion photography aesthetic with clean lines and muted urban tones\n- measured camera~: smooth camera move (pan 100px/s, zoom -6.6%/s)\n- made_of evidence~: Natural lighting, realistic textures, and consistent motion indicate real-world camera footage of a person.\n- **video prompt:** a medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\n\n### #05 00:05.63-00:07.00 · live action\nA woman in a black sleeveless dress and sunglasses walks confidently down a city street, carrying a black handbag. She passes by a parked black car with a visible license plate and other pedestrians in the background. The setting is an urban environment with modern buildings featuring large glass windows and clean architectural lines.\n- shot size: medium · camera: smooth pan right following the subject's movement across the frame · motion: The woman walks forward steadily, her stride confident and purposeful. Other pedestrians move casually in the background, including a man in a blue cap walking past. · lighting: Natural daylight with soft shadows, indicating overcast or diffused sunlight. · style: Clean, contemporary fashion photography style with sharp focus on the subject and muted background tones.\n- measured camera~: smooth camera move (pan 469px/s, zoom -9.5%/s)\n- made_of evidence~: The footage shows natural lighting, realistic motion, and consistent depth of field typical of real-world camera capture.\n- **video prompt:** A medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look.\n\n_Generated by ComfyUI-ReaVideoBreakdown: shot detection + measured camera (OpenCV) and per-shot reading by the native ComfyUI VLM text encoder. `~` = tool-measured; descriptions/prompts come from the VLM seeing the actual frames._"
+      }
+    },
+    {
+      "id": 11,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1210.6530906358855,
+        170.62944471006105
+      ],
+      "size": [
+        357.3553719008262,
+        437.40495867768584
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "{\"format\": \"videomd-like\", \"subformat\": \"rea-video-comfyui-vlm\", \"reader\": \"native ComfyUI VLM text encoder (clip.tokenize -> generate -> decode); no clip_vision\", \"video\": {\"duration\": 7.0, \"fps\": 30.0, \"width\": 720, \"height\": 1280, \"frames\": 210}, \"card\": {\"shots\": 6, \"duration\": 7.0, \"composition\": {\"live_action\": 1.0}}, \"shots\": [{\"index\": 0, \"start_frame\": 0, \"end_frame\": 37, \"start\": 0.0, \"end\": 1.233, \"duration\": 1.233, \"transition_in\": \"cut\", \"boundary_score\": 0.383, \"camera\": \"smooth_move\", \"pan_px_per_s\": 274.8, \"zoom_pct_per_s\": -8.38, \"description\": \"A tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses. She carries a black handbag in her left hand. Behind her, several people walk past near a white building with large windows and a black car parked on the street. The lighting is bright daylight.\", \"made_of\": \"live_action\", \"made_of_reason\": \"natural motion blur, realistic depth of field, and consistent lighting indicate real-world camera footage.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's movement, with slight zoom out\", \"subject_motion\": \"the woman walks forward steadily, arms swinging naturally; background pedestrians move in various directions\", \"lighting\": \"bright natural daylight with soft shadows under the overhangs\", \"style\": \"clean urban fashion photography aesthetic with neutral tones and sharp focus on the subject\", \"video_prompt\": \"a medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\"}, {\"index\": 1, \"start_frame\": 37, \"end_frame\": 72, \"start\": 1.233, \"end\": 2.4, \"duration\": 1.167, \"transition_in\": \"cut\", \"boundary_score\": 0.408, \"camera\": \"smooth_move\", \"pan_px_per_s\": 345.5, \"zoom_pct_per_s\": -10.0, \"description\": \"A woman in a black sleeveless dress and high heels walks confidently down a city sidewalk, carrying a large black handbag. She wears sunglasses and has her hair tied back in a ponytail. The background includes storefronts, pedestrians, and urban street elements like poles and glass doors.\", \"made_of\": \"live_action\", \"made_of_reason\": \"Realistic lighting, natural motion, and consistent depth of field indicate real-world camera footage.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right with slight zoom out, tracking the subject's movement\", \"subject_motion\": \"The woman walks forward steadily from left to right across the frame; background figures move naturally but remain secondary.\", \"lighting\": \"Bright daylight with soft shadows, suggesting midday or early afternoon outdoor setting.\", \"style\": \"Clean, modern fashion editorial aesthetic with neutral tones and sharp focus on the subject.\", \"video_prompt\": \"A woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\"}, {\"index\": 2, \"start_frame\": 72, \"end_frame\": 129, \"start\": 2.4, \"end\": 4.3, \"duration\": 1.9, \"transition_in\": \"cut\", \"boundary_score\": 0.536, \"camera\": \"smooth_move\", \"pan_px_per_s\": 574.7, \"zoom_pct_per_s\": 23.96, \"description\": \"A woman with long brown hair in a high ponytail walks confidently down a city sidewalk. She wears a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag. The background features a modern storefront with white shelving displaying beige handbags. Other pedestrians are visible but out of focus as the camera follows her movement.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The footage shows natural lighting, realistic textures on clothing and skin, and consistent motion blur typical of real-world camera tracking.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's walk, with slight zoom in\", \"subject_motion\": \"the woman walks forward from left to right, maintaining a steady gait; her arms swing naturally, and she carries a bag in her left hand\", \"lighting\": \"bright daylight with soft shadows, suggesting an overcast or shaded urban environment\", \"style\": \"clean, high-fashion editorial aesthetic with neutral tones and sharp focus on the subject\", \"video_prompt\": \"a medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\"}, {\"index\": 3, \"start_frame\": 129, \"end_frame\": 144, \"start\": 4.3, \"end\": 4.8, \"duration\": 0.5, \"transition_in\": \"cut\", \"boundary_score\": 0.547, \"camera\": \"handheld\", \"pan_px_per_s\": 114.9, \"zoom_pct_per_s\": 1.04, \"description\": \"A woman in a black halter dress walks down a city street, her ponytail swinging slightly as she moves. The camera follows her from behind, capturing her confident stride and the urban environment around her. Pedestrians pass by in the background, adding to the bustling atmosphere of the scene.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The video shows natural human movement and realistic lighting consistent with live-action footage.\", \"shot_size\": \"medium\", \"camera_move\": \"handheld tracking shot following the subject from behind\", \"subject_motion\": \"the woman walks forward confidently while carrying a black handbag\", \"lighting\": \"natural daylight illuminates the scene evenly\", \"style\": \"urban fashion photography style with a focus on elegance and movement\", \"video_prompt\": \"a medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\"}, {\"index\": 4, \"start_frame\": 144, \"end_frame\": 169, \"start\": 4.8, \"end\": 5.633, \"duration\": 0.833, \"transition_in\": \"cut\", \"boundary_score\": 0.645, \"camera\": \"smooth_move\", \"pan_px_per_s\": 100.4, \"zoom_pct_per_s\": -6.58, \"description\": \"A woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, stands outdoors. She holds a black handbag on her right arm and wears a gold watch on her left wrist. Her head turns slightly to the side as she looks over her shoulder. The setting appears to be an urban street or plaza with neutral-toned buildings in the background.\", \"made_of\": \"live_action\", \"made_of_reason\": \"Natural lighting, realistic textures, and consistent motion indicate real-world camera footage of a person.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right with slight push in\", \"subject_motion\": \"woman turns her head slightly to look over her shoulder while standing still otherwise\", \"lighting\": \"natural daylight with soft shadows\", \"style\": \"fashion photography aesthetic with clean lines and muted urban tones\", \"video_prompt\": \"a medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\"}, {\"index\": 5, \"start_frame\": 169, \"end_frame\": 210, \"start\": 5.633, \"end\": 7.0, \"duration\": 1.367, \"transition_in\": \"cut\", \"boundary_score\": 0.0, \"camera\": \"smooth_move\", \"pan_px_per_s\": 469.3, \"zoom_pct_per_s\": -9.47, \"description\": \"A woman in a black sleeveless dress and sunglasses walks confidently down a city street, carrying a black handbag. She passes by a parked black car with a visible license plate and other pedestrians in the background. The setting is an urban environment with modern buildings featuring large glass windows and clean architectural lines.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The footage shows natural lighting, realistic motion, and consistent depth of field typical of real-world camera capture.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's movement across the frame\", \"subject_motion\": \"The woman walks forward steadily, her stride confident and purposeful. Other pedestrians move casually in the background, including a man in a blue cap walking past.\", \"lighting\": \"Natural daylight with soft shadows, indicating overcast or diffused sunlight.\", \"style\": \"Clean, contemporary fashion photography style with sharp focus on the subject and muted background tones.\", \"video_prompt\": \"A medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look.\"}]}"
+      ],
+      "widgets_values_named": {
+        "text_0": "{\"format\": \"videomd-like\", \"subformat\": \"rea-video-comfyui-vlm\", \"reader\": \"native ComfyUI VLM text encoder (clip.tokenize -> generate -> decode); no clip_vision\", \"video\": {\"duration\": 7.0, \"fps\": 30.0, \"width\": 720, \"height\": 1280, \"frames\": 210}, \"card\": {\"shots\": 6, \"duration\": 7.0, \"composition\": {\"live_action\": 1.0}}, \"shots\": [{\"index\": 0, \"start_frame\": 0, \"end_frame\": 37, \"start\": 0.0, \"end\": 1.233, \"duration\": 1.233, \"transition_in\": \"cut\", \"boundary_score\": 0.383, \"camera\": \"smooth_move\", \"pan_px_per_s\": 274.8, \"zoom_pct_per_s\": -8.38, \"description\": \"A tall woman with a high ponytail walks confidently down a city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses. She carries a black handbag in her left hand. Behind her, several people walk past near a white building with large windows and a black car parked on the street. The lighting is bright daylight.\", \"made_of\": \"live_action\", \"made_of_reason\": \"natural motion blur, realistic depth of field, and consistent lighting indicate real-world camera footage.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's movement, with slight zoom out\", \"subject_motion\": \"the woman walks forward steadily, arms swinging naturally; background pedestrians move in various directions\", \"lighting\": \"bright natural daylight with soft shadows under the overhangs\", \"style\": \"clean urban fashion photography aesthetic with neutral tones and sharp focus on the subject\", \"video_prompt\": \"a medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\"}, {\"index\": 1, \"start_frame\": 37, \"end_frame\": 72, \"start\": 1.233, \"end\": 2.4, \"duration\": 1.167, \"transition_in\": \"cut\", \"boundary_score\": 0.408, \"camera\": \"smooth_move\", \"pan_px_per_s\": 345.5, \"zoom_pct_per_s\": -10.0, \"description\": \"A woman in a black sleeveless dress and high heels walks confidently down a city sidewalk, carrying a large black handbag. She wears sunglasses and has her hair tied back in a ponytail. The background includes storefronts, pedestrians, and urban street elements like poles and glass doors.\", \"made_of\": \"live_action\", \"made_of_reason\": \"Realistic lighting, natural motion, and consistent depth of field indicate real-world camera footage.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right with slight zoom out, tracking the subject's movement\", \"subject_motion\": \"The woman walks forward steadily from left to right across the frame; background figures move naturally but remain secondary.\", \"lighting\": \"Bright daylight with soft shadows, suggesting midday or early afternoon outdoor setting.\", \"style\": \"Clean, modern fashion editorial aesthetic with neutral tones and sharp focus on the subject.\", \"video_prompt\": \"A woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\"}, {\"index\": 2, \"start_frame\": 72, \"end_frame\": 129, \"start\": 2.4, \"end\": 4.3, \"duration\": 1.9, \"transition_in\": \"cut\", \"boundary_score\": 0.536, \"camera\": \"smooth_move\", \"pan_px_per_s\": 574.7, \"zoom_pct_per_s\": 23.96, \"description\": \"A woman with long brown hair in a high ponytail walks confidently down a city sidewalk. She wears a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag. The background features a modern storefront with white shelving displaying beige handbags. Other pedestrians are visible but out of focus as the camera follows her movement.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The footage shows natural lighting, realistic textures on clothing and skin, and consistent motion blur typical of real-world camera tracking.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's walk, with slight zoom in\", \"subject_motion\": \"the woman walks forward from left to right, maintaining a steady gait; her arms swing naturally, and she carries a bag in her left hand\", \"lighting\": \"bright daylight with soft shadows, suggesting an overcast or shaded urban environment\", \"style\": \"clean, high-fashion editorial aesthetic with neutral tones and sharp focus on the subject\", \"video_prompt\": \"a medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\"}, {\"index\": 3, \"start_frame\": 129, \"end_frame\": 144, \"start\": 4.3, \"end\": 4.8, \"duration\": 0.5, \"transition_in\": \"cut\", \"boundary_score\": 0.547, \"camera\": \"handheld\", \"pan_px_per_s\": 114.9, \"zoom_pct_per_s\": 1.04, \"description\": \"A woman in a black halter dress walks down a city street, her ponytail swinging slightly as she moves. The camera follows her from behind, capturing her confident stride and the urban environment around her. Pedestrians pass by in the background, adding to the bustling atmosphere of the scene.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The video shows natural human movement and realistic lighting consistent with live-action footage.\", \"shot_size\": \"medium\", \"camera_move\": \"handheld tracking shot following the subject from behind\", \"subject_motion\": \"the woman walks forward confidently while carrying a black handbag\", \"lighting\": \"natural daylight illuminates the scene evenly\", \"style\": \"urban fashion photography style with a focus on elegance and movement\", \"video_prompt\": \"a medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\"}, {\"index\": 4, \"start_frame\": 144, \"end_frame\": 169, \"start\": 4.8, \"end\": 5.633, \"duration\": 0.833, \"transition_in\": \"cut\", \"boundary_score\": 0.645, \"camera\": \"smooth_move\", \"pan_px_per_s\": 100.4, \"zoom_pct_per_s\": -6.58, \"description\": \"A woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, stands outdoors. She holds a black handbag on her right arm and wears a gold watch on her left wrist. Her head turns slightly to the side as she looks over her shoulder. The setting appears to be an urban street or plaza with neutral-toned buildings in the background.\", \"made_of\": \"live_action\", \"made_of_reason\": \"Natural lighting, realistic textures, and consistent motion indicate real-world camera footage of a person.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right with slight push in\", \"subject_motion\": \"woman turns her head slightly to look over her shoulder while standing still otherwise\", \"lighting\": \"natural daylight with soft shadows\", \"style\": \"fashion photography aesthetic with clean lines and muted urban tones\", \"video_prompt\": \"a medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\"}, {\"index\": 5, \"start_frame\": 169, \"end_frame\": 210, \"start\": 5.633, \"end\": 7.0, \"duration\": 1.367, \"transition_in\": \"cut\", \"boundary_score\": 0.0, \"camera\": \"smooth_move\", \"pan_px_per_s\": 469.3, \"zoom_pct_per_s\": -9.47, \"description\": \"A woman in a black sleeveless dress and sunglasses walks confidently down a city street, carrying a black handbag. She passes by a parked black car with a visible license plate and other pedestrians in the background. The setting is an urban environment with modern buildings featuring large glass windows and clean architectural lines.\", \"made_of\": \"live_action\", \"made_of_reason\": \"The footage shows natural lighting, realistic motion, and consistent depth of field typical of real-world camera capture.\", \"shot_size\": \"medium\", \"camera_move\": \"smooth pan right following the subject's movement across the frame\", \"subject_motion\": \"The woman walks forward steadily, her stride confident and purposeful. Other pedestrians move casually in the background, including a man in a blue cap walking past.\", \"lighting\": \"Natural daylight with soft shadows, indicating overcast or diffused sunlight.\", \"style\": \"Clean, contemporary fashion photography style with sharp focus on the subject and muted background tones.\", \"video_prompt\": \"A medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look.\"}]}"
+      }
+    },
+    {
+      "id": 12,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1597.1970425517384,
+        173.84507205791994
+      ],
+      "size": [
+        346.3035311795645,
+        438.8174305033806
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "[Shot 00 | 00:00.00-00:01.23 | 1.23s | live_action]\na medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\n\n[Shot 01 | 00:01.23-00:02.40 | 1.17s | live_action]\nA woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\n\n[Shot 02 | 00:02.40-00:04.30 | 1.90s | live_action]\na medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\n\n[Shot 03 | 00:04.30-00:04.80 | 0.50s | live_action]\na medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\n\n[Shot 04 | 00:04.80-00:05.63 | 0.83s | live_action]\na medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\n\n[Shot 05 | 00:05.63-00:07.00 | 1.37s | live_action]\nA medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look."
+      ],
+      "widgets_values_named": {
+        "text_0": "[Shot 00 | 00:00.00-00:01.23 | 1.23s | live_action]\na medium shot of a tall woman with a high ponytail walking confidently down a sunlit city sidewalk, wearing a black halter mini dress, nude strappy heels, and large square sunglasses, carrying a black handbag in her left hand. The camera pans smoothly to the right, following her movement, while slightly zooming out. Behind her, several people walk past near a white building with large windows and a black car parked on the street. Bright natural daylight casts soft shadows under architectural overhangs. The style is clean urban fashion photography with neutral tones and sharp focus on the subject.\n\n[Shot 01 | 00:01.23-00:02.40 | 1.17s | live_action]\nA woman in a sleek black halter dress and nude high heels walks confidently down a sunlit city sidewalk, carrying a large black handbag and wearing dark sunglasses. Her hair is pulled back in a neat ponytail. The camera smoothly pans right and slightly zooms out as she moves from left to right, keeping her centered while background pedestrians and storefronts pass by. The scene is shot in bright daylight with natural shadows, giving it a polished, high-fashion editorial look.\n\n[Shot 02 | 00:02.40-00:04.30 | 1.90s | live_action]\na medium shot of a stylish woman walking confidently down a city sidewalk, wearing a black sleeveless mini dress, large sunglasses, and nude high heels, carrying a black handbag in her left hand. Her long brown hair is tied up in a high ponytail. The camera smoothly pans right and slightly zooms in as she walks past a modern storefront with white shelves displaying beige handbags. Bright daylight illuminates the scene with soft shadows, and other pedestrians move in the blurred background.\n\n[Shot 03 | 00:04.30-00:04.80 | 0.50s | live_action]\na medium shot captures a woman walking down a busy city street, wearing a stylish black halter dress with her hair tied back in a ponytail. The handheld camera follows her from behind as she strides confidently, carrying a black handbag. Natural daylight bathes the scene, highlighting the urban surroundings and the casual yet fashionable vibe of the moment.\n\n[Shot 04 | 00:04.80-00:05.63 | 0.83s | live_action]\na medium shot of a stylish woman with long brown hair in a high ponytail, wearing large black sunglasses and a black halter dress with a flowing back ribbon, standing outdoors in an urban setting. She holds a black handbag on her right arm and wears a gold watch on her left wrist. As the camera smoothly pans right and slightly pushes in, she turns her head slightly to look over her shoulder, her expression calm and composed. Natural daylight illuminates the scene with soft shadows, and the background features neutral-toned buildings.\n\n[Shot 05 | 00:05.63-00:07.00 | 1.37s | live_action]\nA medium shot follows a stylish woman walking confidently down a city street during the day. She wears a sleek black sleeveless dress, high heels, and oversized sunglasses, carrying a black handbag. The camera pans smoothly to the right as she moves past a parked black car and other pedestrians. The setting features modern architecture with large glass storefronts and light-colored stone facades. Natural daylight illuminates the scene evenly, creating a polished, high-fashion urban look."
+      }
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": [
+        886.4602281264938,
+        687.2377091728707
+      ],
+      "size": [
+        723,
+        389.0000000000001
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 15,
+      "type": "easy showAnything",
+      "pos": [
+        1970.7274708011744,
+        398.3163718325249
+      ],
+      "size": [
+        291.6289870910457,
+        105.36957858069805
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "6"
+      ],
+      "widgets_values_named": {
+        "text": "6"
+      }
+    },
+    {
+      "id": 18,
+      "type": "ReaVideoBreakdown",
+      "pos": [
+        502.38563408594604,
+        439.09473396625935
+      ],
+      "size": [
+        298.0533203125,
+        374
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 30
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_md",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "breakdown_json",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        },
+        {
+          "name": "prompts",
+          "type": "STRING",
+          "links": [
+            35
+          ]
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": [
+            37
+          ]
+        },
+        {
+          "name": "keyframes",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "shot_count",
+          "type": "INT",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReaVideoBreakdown"
+      },
+      "widgets_values": [
+        25,
+        0.5,
+        0.24,
+        3,
+        1024,
+        0.4,
+        107136481915426,
+        "randomize",
+        "en",
+        512
+      ],
+      "widgets_values_named": {
+        "fps": 25,
+        "sensitivity": 0.5,
+        "min_shot_seconds": 0.24,
+        "frames_per_shot": 3,
+        "max_length": 1024,
+        "temperature": 0.4,
+        "seed": 107136481915426,
+        "control_after_generate": "randomize",
+        "language": "en",
+        "max_side": 512
+      }
+    },
+    {
+      "id": 19,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1972.9325829115999,
+        189.2339910805937
+      ],
+      "size": [
+        295.823666416228,
+        145.37896318557472
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "6 shots, 7.0s @ 30.00fps; live action 100%"
+      ],
+      "widgets_values_named": {
+        "text_0": "6 shots, 7.0s @ 30.00fps; live action 100%"
+      }
+    }
+  ],
+  "links": [
+    [
+      null,
+      "undefined",
+      null,
+      "undefined",
+      null,
+      null
+    ],
+    [
+      6,
+      7,
+      0,
+      8,
+      0,
+      "VIDEO"
+    ],
+    [
+      29,
+      8,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      30,
+      9,
+      0,
+      18,
+      1,
+      "CLIP"
+    ],
+    [
+      31,
+      8,
+      2,
+      18,
+      2,
+      "FLOAT"
+    ],
+    [
+      32,
+      18,
+      4,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      18,
+      0,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      34,
+      18,
+      1,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      18,
+      2,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      36,
+      18,
+      5,
+      15,
+      0,
+      "INT"
+    ],
+    [
+      37,
+      18,
+      3,
+      19,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.3310000000000006,
+      "offset": [
+        -658.1484751697263,
+        32.760539444688895
+      ]
+    },
+    "frontendVersion": "1.59.4",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
