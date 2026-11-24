@@ -146,3 +146,13 @@ class ReaVideoBreakdown:
 
 NODE_CLASS_MAPPINGS = {"ReaVideoBreakdown": ReaVideoBreakdown}
 NODE_DISPLAY_NAME_MAPPINGS = {"ReaVideoBreakdown": "Video Breakdown (Rea · native VLM)"}
+
+# V3 node (dynamic reference images). ComfyUI handles io.ComfyNode classes inside
+# NODE_CLASS_MAPPINGS (the native comfy_entrypoint path puts them in the same dict).
+# Guarded so environments without comfy_api (offline tests) still load the classic node.
+try:
+    from .nodes_v3 import VideoPromptModWithReferences
+    NODE_CLASS_MAPPINGS["VideoPromptModWithReferences"] = VideoPromptModWithReferences
+    NODE_DISPLAY_NAME_MAPPINGS["VideoPromptModWithReferences"] = "VideoPrompt Mod With References"
+except ImportError:
+    pass

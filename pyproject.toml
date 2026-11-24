@@ -3,8 +3,8 @@
 #   ComfyUI-ReaVideoBreakdown  ->  comfyui-reavideobreakdown
 [project]
 name = "comfyui-reavideobreakdown"
-description = "Shot-by-shot video reverse engineering (rea-video style): detects shots, measures camera motion, and uses the native ComfyUI VLM text encoder to produce a VIDEO.md report + ready-to-use text-to-video prompts per shot. No clip_vision, no external API."
-version = "0.1.0"
+description = "Shot-by-shot video reverse engineering (rea-video style): detects shots, measures camera motion, and uses the native ComfyUI VLM text encoder to produce a VIDEO.md report + ready-to-use text-to-video prompts per shot. Second node rewrites the breakdown into a MiniMax H3 Ref2VA prompt with reference images. No clip_vision, no external API."
+version = "0.2.0"
 license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = ["numpy", "opencv-python-headless"]

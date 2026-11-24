@@ -24,6 +24,9 @@ temp/
 user/
 models/
 
+# --- Local design notes (not published) ---
+/docs/
+
 # --- Editors / OS ---
 .vscode/
 .idea/
